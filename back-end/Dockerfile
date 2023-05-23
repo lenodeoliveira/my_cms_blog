@@ -14,4 +14,6 @@ COPY . .
 
 RUN npm install
 
+RUN chmod -R 777 ./dist
+
 EXPOSE 5050

@@ -60,10 +60,10 @@ describe('DbRegisterUserByAdmin', () => {
                 email: mockRegisterUserByAdmin().email
             },
             from: {
-                name: 'Test mail',
+                name: "Welcome email",
                 email: 'test@gmail.com'
             },
-            subject: 'seja bem-vindo',
+            subject: 'Be welcome',
             body: '<p>Bem-vindo ao gerenciador de conteúdo!</p><br><p>Seu login é {{login}} e sua senha de acesso é {{password}}. </p>',
             replacements
         })
