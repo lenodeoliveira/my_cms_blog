@@ -1,0 +1,45 @@
+version: '3.1'
+services:
+
+  client_cms_brave:
+    container_name: client_cms_brave
+    build:
+      context: front-end
+      dockerfile: Dockerfile
+    volumes:
+      - ./front-end:/app:rw
+      - /app/node_modules
+    ports:
+      - 3000:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  db:
+    image: mysql:5.7
+    container_name: db
+    restart: always
+    env_file:
+      - ./back-end/.env.db
+    ports:
+      - 3306:3306
+    volumes:
+      - ./back-end/scripts/schema.sql:/docker-entrypoint-initdb.d/1.sql
+      - ./back-end/data:/var/lib/mysql
+  service_api:
+      container_name: api_service
+      entrypoint: wait-for db:3306 -t 40 -- npm run debug
+      image: node:16
+      restart: always
+      build:
+        context: back-end
+        dockerfile: Dockerfile
+      volumes:
+      - ./back-end/src/:/usr/src/cms-brave/src/
+      - ./back-end/dist/:/usr/src/cms-brave/dist/
+      - ./back-end/logs/:/usr/src/cms-brave/logs/
+      - ./back-end/package.json:/usr/src/cms-brave/package.json
+      ports:
+      - "5050:5050"
+      depends_on:
+      - db
+      env_file:
+      - ./back-end/.env

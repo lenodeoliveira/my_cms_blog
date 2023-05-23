@@ -1,0 +1,11 @@
+back-end/node_modules
+back-end/data
+back-end/logs
+back-end/coverage
+back-end/dist
+
+front-end/node_modules
+front-end/build
+
+.DS_STORE
+.vscode
