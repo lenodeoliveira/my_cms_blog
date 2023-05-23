@@ -1,6 +1,6 @@
-# 🛠 Projeto CMS Brave Ag - FRONT-END
+# 🛠 Projeto CMS - FRONT-END
 
-Front-end do CMS Brave construído em React usando as seguintes tecnologias:
+Front-end do CMS construído em React usando as seguintes tecnologias:
 
 * emotion/react: 11.4.0
 * emotion/styled: 11.3.0

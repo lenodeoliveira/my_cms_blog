@@ -8,7 +8,7 @@
 <img height="32" width="32" src="https://cdn.jsdelivr.net/npm/simple-icons@v7/icons/sequelize.svg" />&nbsp;&nbsp;
 <br>
 
-# CMS BRAVE 🚀
+# CMS 🚀
 
 Projeto tem por objetivo criar um CMS que sirva como um ponto de partida para os produtos que utilizem algum gerenciamento de conteúdo.
 

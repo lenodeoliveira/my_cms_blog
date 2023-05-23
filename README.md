@@ -1,4 +1,4 @@
-# 📑 Projeto CMS Brave ⏳
+# 📑 Projeto CMS ⏳
 
 ⚡️ Quick start
 
